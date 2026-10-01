@@ -4,239 +4,186 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Urban Ogrinec</title>
-<meta name="description" content="Urban Ogrinec — young researcher in mathematics (topology) at IMFM and the Faculty of Mathematics and Physics, University of Ljubljana.">
+<meta name="description" content="Urban Ogrinec, PhD student in algebraic topology at the University of Ljubljana: topological complexity, LS-category, sectional category, configuration spaces.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
 :root{
-  --bg:#F6F7F9; --surface:#FFFFFF; --ink:#18202C; --muted:#5A6475; --rule:#DCE1E8;
-  --accent:#1E5A84; --accent-soft:#E4EDF5;
-  --serif:"Spectral", Georgia, "Times New Roman", serif;
-  --sans:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --bg:#FBFBF9; --ink:#1D2129; --muted:#5D6470; --rule:#DFE1E4; --accent:#244F86;
+  --serif:"Source Serif 4", "Latin Modern Roman", Georgia, "Times New Roman", serif;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
-  :root{
-    --bg:#11151C; --surface:#171C25; --ink:#E4E8EE; --muted:#9AA4B3; --rule:#2A313D;
-    --accent:#86B8DD; --accent-soft:#1D2A38; color-scheme:dark;
-  }
+  :root{ --bg:#14171C; --ink:#E3E5E8; --muted:#9BA2AD; --rule:#2B3038; --accent:#8DB4E2; color-scheme:dark; }
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.6; padding-inline:20px; padding-block:0}
-a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
-a:hover{text-decoration-thickness:2px}
-a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--serif); font-size:18px; line-height:1.55; padding-inline:20px; padding-block:0}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline; text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.page{max-width:720px; margin:0 auto; padding-block:48px 72px}
 
-.wrap{max-width:1040px; margin:0 auto; display:grid; grid-template-columns:190px minmax(0,1fr); gap:56px; padding-block:56px 80px}
-nav{position:sticky; top:32px; align-self:start}
-nav ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px}
-nav a{color:var(--muted); text-decoration:none; font-size:14px; letter-spacing:.02em}
-nav a:hover{color:var(--ink)}
-.navname{font-family:var(--serif); font-size:18px; color:var(--ink); margin:0 0 18px}
+header{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:28px; align-items:start}
+h1{font-weight:600; font-size:2.1rem; line-height:1.15; margin:0 0 6px}
+.position{margin:0 0 14px; color:var(--muted)}
+.contact{margin:0; font-size:.95rem; line-height:1.6}
+.contact .obf{font-variant-numeric:tabular-nums}
+.links{margin:10px 0 0; font-size:.95rem}
+.links a + a::before{content:"·"; color:var(--muted); margin:0 .5em; display:inline-block}
+.photo{width:150px; height:150px; border-radius:4px; object-fit:cover; max-width:100%}
 
-main{display:flex; flex-direction:column; gap:52px; min-width:0}
+nav.top{margin:28px 0 8px; padding:10px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); display:flex; flex-wrap:wrap; gap:4px 22px; font-size:.95rem}
 
-header.id{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:32px; align-items:start; padding-bottom:36px; border-bottom:1px solid var(--rule)}
-h1{font-family:var(--serif); font-weight:600; font-size:clamp(34px,5vw,46px); line-height:1.1; margin:0 0 10px; text-wrap:balance}
-.aff{margin:0; color:var(--muted); font-size:15px; line-height:1.5}
-.contact{margin:20px 0 0; display:grid; grid-template-columns:auto 1fr; gap:4px 18px; font-size:14.5px}
-.contact dt{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; padding-top:3px}
-.contact dd{margin:0; overflow-wrap:anywhere}
-.photo{width:168px; height:168px; border-radius:50%; object-fit:cover; border:4px solid var(--surface); box-shadow:0 0 0 1px var(--rule); max-width:100%}
+section{margin-top:40px}
+h2{font-weight:600; font-size:1.35rem; margin:0 0 12px}
+h3{font-weight:400; font-style:italic; font-size:1.05rem; color:var(--muted); margin:22px 0 8px}
+p{margin:0 0 12px}
 
-section h2{font-family:var(--serif); font-weight:600; font-size:25px; margin:0 0 16px; text-wrap:balance}
-section p{margin:0 0 12px; max-width:66ch}
-.interests{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 0; padding:0; list-style:none}
-.interests li{font-size:13px; padding:3px 10px; border:1px solid var(--rule); border-radius:999px; color:var(--muted); background:var(--surface)}
+ol.pubs{margin:0; padding-left:1.4em; display:flex; flex-direction:column; gap:10px}
+ol.pubs li::marker{color:var(--muted)}
+.t{font-weight:600}
+.meta{color:var(--muted)}
+.prep .t{font-weight:400}
 
-h3{font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:600; margin:28px 0 12px}
-section h2 + h3{margin-top:0}
-ol.pubs,ul.items{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; max-width:74ch}
-.pubs li{display:flex; flex-direction:column; gap:2px}
-.pt{font-family:var(--serif); font-size:18px; font-style:italic; line-height:1.35}
-.pm{font-size:14px; color:var(--muted)}
-.note{font-size:14px; color:var(--muted); margin-top:-4px}
+ul.list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px}
+ul.list li{display:grid; grid-template-columns:7.5em minmax(0,1fr); gap:12px}
+.d{color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap}
 
-.items li{display:grid; grid-template-columns:128px minmax(0,1fr); gap:16px}
-.date{font-family:var(--mono); font-size:13px; color:var(--muted); padding-top:2px; font-variant-numeric:tabular-nums}
-.what{display:flex; flex-direction:column}
-.where{font-size:14px; color:var(--muted)}
+footer{margin-top:56px; padding-top:14px; border-top:1px solid var(--rule); color:var(--muted); font-size:.85rem}
 
-footer{color:var(--muted); font-size:13px; border-top:1px solid var(--rule); padding-top:18px}
-
-@media (max-width:760px){
-  .wrap{grid-template-columns:1fr; gap:28px; padding-block:32px 56px}
-  nav{position:static}
-  nav ul{flex-direction:row; flex-wrap:wrap; gap:6px 16px}
-  .navname{display:none}
-  header.id{grid-template-columns:1fr}
-  .photo{order:-1; width:120px; height:120px}
-  .items li{grid-template-columns:1fr; gap:0}
+@media (max-width:600px){
+  body{font-size:17px}
+  header{grid-template-columns:1fr}
+  .photo{order:-1; width:110px; height:110px}
+  ul.list li{grid-template-columns:1fr; gap:0}
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <nav aria-label="Sections">
-    <p class="navname">Urban Ogrinec</p>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#talks">Talks</a></li>
-      <li><a href="#conferences">Conferences</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#education">Education</a></li>
-    </ul>
+<div class="page">
+
+  <header>
+    <div>
+      <h1>Urban Ogrinec</h1>
+      <p class="position">PhD student and Young Researcher<br>
+        <a href="https://www.fmf.uni-lj.si/en/">Faculty of Mathematics and Physics</a>, University of Ljubljana<br>
+        <a href="https://www.imfm.si/">Institute of Mathematics, Physics and Mechanics</a> (IMFM)<br>
+        Advisor: Petar Pavešić</p>
+      <p class="contact">
+        Email: <span class="obf">urban.ogrinec [at] fmf.uni-lj [dot] si</span><br>
+        Office: 312, Jadranska 19, 1000 Ljubljana, Slovenia
+      </p>
+      <p class="links">
+        <a href="https://arxiv.org/search/?searchtype=author&amp;query=Ogrinec%2C+Urban">arXiv</a><a href="https://www.linkedin.com/in/urban-ogrinec/">LinkedIn</a><a href="https://github.com/urbanog">GitHub</a>
+      </p>
+    </div>
+    <img class="photo" src="urban.jpg" alt="Urban Ogrinec" width="150" height="150">
+  </header>
+
+  <nav class="top" aria-label="Sections">
+    <a href="#research">Research</a>
+    <a href="#papers">Papers</a>
+    <a href="#talks">Talks</a>
+    <a href="#conferences">Conferences</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#writing">Expository writing</a>
+    <a href="#education">Education</a>
   </nav>
 
-  <main>
-    <header class="id">
-      <div>
-        <h1>Urban Ogrinec</h1>
-        <p class="aff">Faculty of Mathematics and Physics, University of Ljubljana<br>
-        Institute of Mathematics, Physics and Mechanics (IMFM)</p>
-        <dl class="contact">
-          <dt>E-mail</dt><dd><a href="mailto:urban.ogrinec@fmf.uni-lj.si">urban.ogrinec@fmf.uni-lj.si</a></dd>
-          <dt>Office</dt><dd>312, Jadranska 19, Ljubljana</dd>
-          <dt>arXiv</dt><dd><a href="https://arxiv.org/search/?searchtype=author&amp;query=Ogrinec%2C+Urban">papers on arXiv</a></dd>
-          <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/urban-ogrinec/">linkedin.com/in/urban-ogrinec</a></dd>
-        </dl>
-      </div>
-      <img class="photo" src="urban.jpg" alt="Portrait of Urban Ogrinec" width="168" height="168">
-    </header>
+  <section id="research">
+    <h2>Research</h2>
+    <p>I work in algebraic topology. Most of my work concerns <em>topological complexity</em> and its relatives. The topological complexity of a space measures how many continuous rules a robot needs to move between any two positions in that space. The Lusternik–Schnirelmann category asks a related question: how many contractible open sets are needed to cover the space. Both are special cases of the <em>sectional category</em> of a map.</p>
+    <p>I study parametrized versions of these invariants, where the space varies over a base and the motion rules must vary with it. For aspherical spaces they become questions about groups, their actions and their cohomology. I am also interested in configuration spaces and graph braid groups.</p>
+  </section>
 
-    <section id="about">
-      <h2>About me</h2>
-      <p>I am a young researcher at the <a href="https://www.imfm.si/">Institute of Mathematics, Physics and Mechanics</a> in Ljubljana and a doctoral student at the <a href="https://www.fmf.uni-lj.si/en/">Faculty of Mathematics and Physics</a>, University of Ljubljana, where I am a member of the Topology and its Applications group.</p>
-      <p>I work in geometric and algebraic topology. My main interest is topological complexity and its relatives: invariants that measure how many continuous rules are needed to plan motion in a space, and how these numbers are controlled by the fundamental group, its actions and its cohomology. I am also interested in configuration spaces and graph braid groups.</p>
-      <ul class="interests">
-        <li>Topological complexity</li>
-        <li>LS-category</li>
-        <li>Sectional category</li>
-        <li>Group actions</li>
-        <li>Configuration spaces</li>
-        <li>Graph braid groups</li>
-        <li>Applied and computational topology</li>
-      </ul>
-    </section>
+  <section id="papers">
+    <h2>Papers</h2>
+    <h3>Preprints</h3>
+    <ol class="pubs">
+      <li><a class="t" href="https://arxiv.org/abs/2609.01462">Parametrized LS category and group actions</a><br>
+        <span class="meta">with Petar Pavešić · 2026 · arXiv:2609.01462</span></li>
+      <li><span class="t">A Markov theorem for braid closures up to link homotopy</span><br>
+        <span class="meta">2026 · submitted</span></li>
+    </ol>
 
-    <section id="research">
-      <h2>Research</h2>
+    <h3>In preparation</h3>
+    <ol class="pubs prep">
+      <li><span class="t">Torsion in the homology of graph braid groups</span></li>
+      <li><span class="t">Stable multiplicities in the rational cohomology of the ordered configuration spaces of the torus</span></li>
+      <li><span class="t">Vertex explosion and exact symmetric-group multiplicities in the homology of pure graph braid groups</span></li>
+      <li><span class="t">The Novikov conjecture for outer automorphism groups of right-angled Coxeter groups</span></li>
+      <li><span class="t">Maximal Schwarz genus for free quotients of projective unitary groups, with applications to the topological complexity of enumerative problems</span></li>
+      <li><span class="t">The Lusternik–Schnirelmann category of a group homomorphism: a two-dimensional counterexample and a Poincaré duality theorem</span></li>
+    </ol>
 
-      <h3>Preprints</h3>
-      <ol class="pubs">
-        <li>
-          <span class="pt">Parametrized LS category and group actions</span>
-          <span class="pm">with Petar Pavešić · 2026 · <a href="https://arxiv.org/abs/2609.01462">arXiv:2609.01462</a></span>
-        </li>
-        <li>
-          <span class="pt">A Markov theorem for braid closures up to link homotopy</span>
-          <span class="pm">2026 · submitted</span>
-        </li>
-      </ol>
+    <h3>Research projects</h3>
+    <ul class="list">
+      <li><span class="d">2022–2025</span><span>Selected problems in applied and computational topology (ARIS J1-4001)</span></li>
+      <li><span class="d">2022–2025</span><span>A computational library for knotted structures and applications (ARIS J1-4031)</span></li>
+    </ul>
+  </section>
 
-      <h3>In preparation</h3>
-      <ol class="pubs">
-        <li><span class="pt">Torsion in the homology of graph braid groups</span></li>
-        <li><span class="pt">Stable multiplicities in the rational cohomology of the ordered configuration spaces of the torus</span></li>
-        <li><span class="pt">Vertex explosion and exact symmetric-group multiplicities in the homology of pure graph braid groups</span></li>
-        <li><span class="pt">The Novikov conjecture for outer automorphism groups of right-angled Coxeter groups</span></li>
-        <li><span class="pt">Maximal Schwarz genus for free quotients of projective unitary groups, with applications to the topological complexity of enumerative problems</span></li>
-        <li><span class="pt">The Lusternik–Schnirelmann category of a group homomorphism: a two-dimensional counterexample and a Poincaré duality theorem</span></li>
-      </ol>
+  <section id="talks">
+    <h2>Talks</h2>
+    <p class="meta">Geometric topology seminar, Faculty of Mathematics and Physics, Ljubljana.</p>
+    <ul class="list">
+      <li><span class="d">19 Nov 2025</span><span>Sectional category of subgroup inclusions and sequential topological complexity of aspherical spaces as A-genus, part 2</span></li>
+      <li><span class="d">12 Nov 2025</span><span><a href="https://www.fmf.uni-lj.si/en/news/event/2294/urban-ogrinec-sectional-category-of-subgroup-inclusions-and-sequential-topological-complexity-of-aspherical-spaces-as-a-genus-part-1/">Sectional category of subgroup inclusions and sequential topological complexity of aspherical spaces as A-genus, part 1</a></span></li>
+      <li><span class="d">Oct 2025</span><span>Polyhedral products (series of talks)</span></li>
+      <li><span class="d">Mar 2025</span><span>Borsuk–Ulam property and sectional category</span></li>
+      <li><span class="d">12 Mar 2025</span><span><a href="https://www.fmf.uni-lj.si/en/news/event/1899/urban-ogrinec-distributional-topological-complexity-and-ls-category/">Distributional topological complexity and LS-category</a></span></li>
+      <li><span class="d">27 Nov 2024</span><span><a href="https://www.fmf.uni-lj.si/en/news/event/1751/urban-ogrinec-parametrized-topological-complexity-of-sphere-bundles-part-2/">Parametrized topological complexity of sphere bundles, part 2</a></span></li>
+      <li><span class="d">2024</span><span>Parametrized topological complexity of sphere bundles, part 1</span></li>
+      <li><span class="d">2024</span><span>Parametrized topological complexity, parts 1 and 2</span></li>
+    </ul>
+  </section>
 
-      <h3>Other publications</h3>
-      <ol class="pubs">
-        <li>
-          <span class="pt">Topološka svetloba (Topological photonics)</span>
-          <span class="pm">Matrika 7 (2020), no. 2 · <a href="https://matrika.fmf.uni-lj.si/letnik-7/stevilka-2/ogrinec.html">article</a></span>
-        </li>
-      </ol>
+  <section id="conferences">
+    <h2>Conferences and schools</h2>
+    <ul class="list">
+      <li><span class="d">24 Sep 2026</span><span><a href="https://sites.google.com/view/tulsfxi">TULSF XI</a>, Trieste–Udine–Ljubljana–SISSA–Ferrara algebraic geometry meeting, Ljubljana</span></li>
+      <li><span class="d">22–26 Jun 2026</span><span><a href="https://sites.google.com/view/reginahomotopy">Summer School on Homotopy Colimits</a>, University of Regina, Canada</span></li>
+      <li><span class="d">9–13 Feb 2026</span><span>Homotopy Structures in Barcelona (HoStBCN), Centre de Recerca Matemàtica, Barcelona</span></li>
+      <li><span class="d">23–27 Jun 2025</span><span><a href="https://appliedtopology.org/young-topologists-meeting-june-2025-stockholm/">Young Topologists Meeting 2025</a>, Stockholm</span></li>
+      <li><span class="d">7–12 Nov 2024</span><span>CIMAT-Mérida Applied Topology School, Mérida, Mexico</span></li>
+    </ul>
+  </section>
 
-      <h3>Research projects</h3>
-      <ul class="items">
-        <li><span class="date">2022–2025</span><span class="what">Selected problems in applied and computational topology<span class="where">ARIS project J1-4001</span></span></li>
-        <li><span class="date">2022–2025</span><span class="what">A computational library for knotted structures and applications<span class="where">ARIS project J1-4031</span></span></li>
-      </ul>
-    </section>
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <ul class="list">
+      <li><span class="d">2023–</span><span>Teaching assistant, Mathematics 1 and Mathematics 2 for first-year physics students, Faculty of Mathematics and Physics, Ljubljana</span></li>
+    </ul>
+  </section>
 
-    <section id="talks">
-      <h2>Talks</h2>
-      <p class="note">All at the Geometric topology seminar, Faculty of Mathematics and Physics, University of Ljubljana.</p>
-      <ul class="items">
-        <li>
-          <span class="date">19. 11. 2025</span>
-          <span class="what">Sectional category of subgroup inclusions and sequential topological complexity of aspherical spaces as A-genus, part 2</span>
-        </li>
-        <li>
-          <span class="date">12. 11. 2025</span>
-          <span class="what"><a href="https://www.fmf.uni-lj.si/en/news/event/2294/urban-ogrinec-sectional-category-of-subgroup-inclusions-and-sequential-topological-complexity-of-aspherical-spaces-as-a-genus-part-1/">Sectional category of subgroup inclusions and sequential topological complexity of aspherical spaces as A-genus, part 1</a></span>
-        </li>
-        <li>
-          <span class="date">10. 2025</span>
-          <span class="what">Polyhedral products (series of talks)</span>
-        </li>
-        <li>
-          <span class="date">3. 2025</span>
-          <span class="what">Borsuk–Ulam property and sectional category</span>
-        </li>
-        <li>
-          <span class="date">12. 3. 2025</span>
-          <span class="what"><a href="https://www.fmf.uni-lj.si/en/news/event/1899/urban-ogrinec-distributional-topological-complexity-and-ls-category/">Distributional topological complexity and LS-category</a></span>
-        </li>
-        <li>
-          <span class="date">27. 11. 2024</span>
-          <span class="what"><a href="https://www.fmf.uni-lj.si/en/news/event/1751/urban-ogrinec-parametrized-topological-complexity-of-sphere-bundles-part-2/">Parametrized topological complexity of sphere bundles, part 2</a></span>
-        </li>
-        <li>
-          <span class="date">2024</span>
-          <span class="what">Parametrized topological complexity of sphere bundles, part 1</span>
-        </li>
-        <li>
-          <span class="date">2024</span>
-          <span class="what">Parametrized topological complexity, parts 1 and 2</span>
-        </li>
-      </ul>
-    </section>
+  <section id="writing">
+    <h2>Expository writing</h2>
+    <ul class="list">
+      <li><span class="d">2024</span><span><a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=159333&amp;lang=slv">Nonlinear sigma models</a> <span class="meta">(Master's thesis in physics, in Slovene)</span></span></li>
+      <li><span class="d">2023</span><span><a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=144391&amp;lang=slv">Seiberg–Witten theory</a> <span class="meta">(Master's thesis in mathematics, in Slovene)</span></span></li>
+      <li><span class="d">2020</span><span><a href="https://matrika.fmf.uni-lj.si/letnik-7/stevilka-2/ogrinec.html">Topološka svetloba</a> (Topological photonics) <span class="meta">Matrika 7 (2020), no. 2</span></span></li>
+    </ul>
+  </section>
 
-    <section id="conferences">
-      <h2>Conferences and schools</h2>
-      <ul class="items">
-        <li><span class="date">24. 9. 2026</span><span class="what"><a href="https://sites.google.com/view/tulsfxi">TULSF XI</a> (Trieste–Udine–Ljubljana–SISSA–Ferrara algebraic geometry meeting)<span class="where">Faculty of Mathematics and Physics, Ljubljana, Slovenia</span></span></li>
-        <li><span class="date">22.–26. 6. 2026</span><span class="what"><a href="https://sites.google.com/view/reginahomotopy">Summer School on Homotopy Colimits</a><span class="where">University of Regina, Canada</span></span></li>
-        <li><span class="date">9.–13. 2. 2026</span><span class="what">Homotopy Structures in Barcelona (HoStBCN)<span class="where">Centre de Recerca Matemàtica, Barcelona, Spain</span></span></li>
-        <li><span class="date">23.–27. 6. 2025</span><span class="what"><a href="https://appliedtopology.org/young-topologists-meeting-june-2025-stockholm/">Young Topologists Meeting 2025</a><span class="where">Stockholm, Sweden</span></span></li>
-        <li><span class="date">7.–12. 11. 2024</span><span class="what">CIMAT-Mérida Applied Topology School<span class="where">CIMAT, Mérida, Mexico</span></span></li>
-      </ul>
-    </section>
+  <section id="education">
+    <h2>Education</h2>
+    <ul class="list">
+      <li><span class="d">2023–</span><span>PhD in mathematics, University of Ljubljana</span></li>
+      <li><span class="d">2020–2024</span><span>MSc in physics, University of Ljubljana</span></li>
+      <li><span class="d">2020–2023</span><span>MSc in mathematics, University of Ljubljana</span></li>
+      <li><span class="d">2016–2020</span><span>BSc in physics, University of Ljubljana</span></li>
+    </ul>
+    <h3>Awards</h3>
+    <ul class="list">
+      <li><span class="d">2019</span><span>Dean's Award for Academic Achievement, Faculty of Mathematics and Physics</span></li>
+      <li><span class="d">2016, 2017</span><span>Honourable mentions, International Olympiad on Astronomy and Astrophysics</span></li>
+    </ul>
+  </section>
 
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <p>Since 2023/24 I have been a teaching assistant for <strong>Mathematics 1</strong> and <strong>Mathematics 2</strong> for first-year physics students at the Faculty of Mathematics and Physics, University of Ljubljana.</p>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <ul class="items">
-        <li><span class="date">2023–</span><span class="what">Doctoral studies in mathematics<span class="where">Faculty of Mathematics and Physics, University of Ljubljana</span></span></li>
-        <li><span class="date">2020–2023</span><span class="what">Master's degree in mathematics<span class="where">Thesis: <a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=144391&amp;lang=slv">Seiberg–Witten theory</a></span></span></li>
-        <li><span class="date">2020–2024</span><span class="what">Master's degree in physics<span class="where">Thesis: <a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=159333&amp;lang=slv">Nonlinear sigma models</a></span></span></li>
-        <li><span class="date">2016–2020</span><span class="what">Bachelor's degree in physics<span class="where">Thesis: Topological photonics</span></span></li>
-      </ul>
-
-      <h3>Awards</h3>
-      <ul class="items">
-        <li><span class="date">2019</span><span class="what">Dean's Award for Academic Achievement<span class="where">Faculty of Mathematics and Physics, University of Ljubljana</span></span></li>
-        <li><span class="date">2016, 2017</span><span class="what">Honourable mentions<span class="where">10th and 11th International Olympiad on Astronomy and Astrophysics</span></span></li>
-      </ul>
-    </section>
-
-    <footer>Last updated October 2026</footer>
-  </main>
+  <footer>Last updated October 2026</footer>
 </div>
 </body>
 </html>
